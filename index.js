@@ -8,9 +8,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.content === '!ping') {
+	if (message.content === `${prefix}ping`) {
 		message.channel.send('Pong.');
+	} else if (message.content === `${prefix}beep`) {
+		message.channel.send('Boop.');
 	}
-});
 
-client.login('NzA0NzEzNTY1OTEwODU5ODA4.XqhJxA.NPEdkTmAiQ7HNGzM3TN0cu1Iw4k');
+client.login(process.env.BOT_TOKEN);
